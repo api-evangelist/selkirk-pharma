@@ -64,5 +64,7 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Selkirk Pharma is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://forgeglobal.com/selkirk-pharma_stock/
+Selkirk Pharma, Inc. is a privately held U.S. contract development and manufacturing organization (CDMO) in Spokane, Washington, specializing in the aseptic fill/finish of sterile injectable drug products — vaccines, biologics and small molecules — for clinical and commercial supply. Founded in 2018, it operates a purpose-built aseptic campus at 9110 W Granite Avenue in the Pacific Northwest Technology Park, roughly half a mile from Spokane International Airport, running unidirectional personnel and material flow, single-use systems, SKAN isolator technology and Bausch+Strobel VarioSys dose-filling lines rated to about 3,600 vials per hour under EU GMP Annex 1. Services span aseptic filling, in-house analytical chemistry and microbiology, sterility testing, finished-product inspection, regulatory support and supply-chain services, plus a ClinFAST program that compresses fill/finish timelines for clinical-trial material. The build-out drew roughly $150M led by Spokane's Cowles Company with other Washington State investors, and Colleen Dixon was named chief executive in July 2024. Selkirk Pharma sells contract manufacturing capacity, not software: it operates no developer program, publishes no web API, SDK or machine-readable specification, and maintains no public source-code organization. (In this sector "API" ordinarily means active pharmaceutical ingredient; Selkirk fills and finishes drug product and publishes no web API.)
+
+- Website: https://www.selkirkpharma.com/
+- Secondary market listing: https://forgeglobal.com/selkirk-pharma_stock/

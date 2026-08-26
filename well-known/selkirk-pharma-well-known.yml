@@ -1,0 +1,146 @@
+generated: '2026-08-26'
+method: probed
+source: live probes of www.selkirkpharma.com and selkirkpharma.com, 2026-08-26
+note: >-
+  NO /.well-known document was obtained from any Selkirk Pharma host, and NO WellKnown or
+  SecurityTxt pointer is wired — this file records an absence and an obstruction, not a presence.
+  Two distinct facts are recorded below. (1) On port 443 the Webflow edge in front of
+  www.selkirkpharma.com and selkirkpharma.com REFUSED the TLS handshake to every client available
+  to this pipeline — curl/LibreSSL 3.3.6, python `ssl`, and `openssl s_client` 3.6.2 each received
+  alert 40 (handshake_failure) at TLSv1.2 and TLSv1.3, with and without ALPN — so those rows carry
+  `status: null`, meaning no HTTP response was ever produced, not "404". (2) On port 80 the origin
+  (nginx) answers EVERY path, including these, with a blanket 301 to the https:// form, so the
+  redirect is a global rule and says nothing about whether the target exists. Independent of the
+  edge, there is no evidence of any developer surface to attach a /.well-known document to: no
+  api./docs./developer./developers./portal./app./client./customers./login./my./status.
+  selkirkpharma.com hostname resolves (all NXDOMAIN), the archived 2026-05-08 copy of the site
+  contains 17 pages, all of them contract-manufacturing marketing, and there is no GitHub
+  organization or published package. Selkirk Pharma is a sterile fill/finish CDMO; it sells
+  manufacturing capacity, not software.
+hosts:
+- host: https://www.selkirkpharma.com
+  documents:
+  - path: /.well-known/security.txt
+    status: null
+    note: TLS handshake refused (alert 40) — no HTTP response
+  - path: /.well-known/openid-configuration
+    status: null
+    note: TLS handshake refused (alert 40) — no HTTP response
+  - path: /.well-known/oauth-authorization-server
+    status: null
+    note: TLS handshake refused (alert 40) — no HTTP response
+  - path: /.well-known/api-catalog
+    status: null
+    note: TLS handshake refused (alert 40) — no HTTP response
+  - path: /.well-known/ai-plugin.json
+    status: null
+    note: TLS handshake refused (alert 40) — no HTTP response
+- host: https://selkirkpharma.com
+  documents:
+  - path: /.well-known/security.txt
+    status: null
+    note: TLS handshake refused (alert 40) — no HTTP response
+  - path: /.well-known/openid-configuration
+    status: null
+    note: TLS handshake refused (alert 40) — no HTTP response
+  - path: /.well-known/oauth-authorization-server
+    status: null
+    note: TLS handshake refused (alert 40) — no HTTP response
+  - path: /.well-known/api-catalog
+    status: null
+    note: TLS handshake refused (alert 40) — no HTTP response
+  - path: /.well-known/ai-plugin.json
+    status: null
+    note: TLS handshake refused (alert 40) — no HTTP response
+- host: http://www.selkirkpharma.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 301
+    note: blanket nginx redirect to https:// — served for every path, not a document
+  - path: /.well-known/openid-configuration
+    status: 301
+    note: blanket nginx redirect to https:// — served for every path, not a document
+  - path: /.well-known/oauth-authorization-server
+    status: 301
+    note: blanket nginx redirect to https:// — served for every path, not a document
+  - path: /.well-known/api-catalog
+    status: 301
+    note: blanket nginx redirect to https:// — served for every path, not a document
+  - path: /.well-known/ai-plugin.json
+    status: 301
+    note: blanket nginx redirect to https:// — served for every path, not a document
+x-evidence:
+  fetched: '2026-08-26'
+  hosts_probed:
+  - www.selkirkpharma.com
+  - selkirkpharma.com
+  contract_discovery:
+    note: >-
+      STEP 0b run in full against the only host this company operates. There is no apis[] entry,
+      no baseURL and no OpenAPI servers[] host in this repo, so the corporate host is also the
+      docs/console host by elimination.
+    probes:
+    - url: https://www.selkirkpharma.com/openapi.json
+      status: null
+      note: TLS handshake refused
+    - url: https://www.selkirkpharma.com/swagger.json
+      status: null
+      note: TLS handshake refused
+    - url: https://www.selkirkpharma.com/api-docs
+      status: null
+      note: TLS handshake refused
+    - url: https://www.selkirkpharma.com/graphql
+      status: null
+      note: TLS handshake refused
+    - url: https://www.selkirkpharma.com/.well-known/agent-card.json
+      status: null
+      note: TLS handshake refused — no A2A agent card obtained, so no a2a/ artifact is written
+    - url: https://www.selkirkpharma.com/.well-known/agent.json
+      status: null
+      note: TLS handshake refused — legacy pre-0.3 path also unobtainable
+    - url: http://www.selkirkpharma.com/openapi.json
+      status: 301
+    - url: http://www.selkirkpharma.com/llms.txt
+      status: 301
+    - url: http://www.selkirkpharma.com/robots.txt
+      status: 301
+  subdomains_probed:
+    note: >-
+      Every developer-shaped hostname is NXDOMAIN — there is no wildcard, so these are genuine
+      absences rather than a catch-all answering.
+    nxdomain:
+    - api.selkirkpharma.com
+    - portal.selkirkpharma.com
+    - docs.selkirkpharma.com
+    - developer.selkirkpharma.com
+    - developers.selkirkpharma.com
+    - app.selkirkpharma.com
+    - client.selkirkpharma.com
+    - customers.selkirkpharma.com
+    - login.selkirkpharma.com
+    - my.selkirkpharma.com
+    - status.selkirkpharma.com
+  registries_searched:
+  - url: https://api.github.com/search/users?q=selkirk+pharma
+    status: 200
+    result: 0 accounts — no GitHub organization
+  - url: https://api.github.com/search/repositories?q=selkirkpharma
+    status: 200
+    result: 0 repositories
+  - url: https://registry.npmjs.org/-/v1/search?text=selkirk%20pharma
+    status: 200
+    result: >-
+      no first-party package; the @selkirk-systems/* results belong to Selkirk Systems
+      (bitbucket.org/selkirk), an unrelated company
+  - url: https://pypi.org/pypi/selkirk-pharma/json
+    status: 404
+  site_map_archived:
+    source: http://web.archive.org/web/20260508082831/https://www.selkirkpharma.com/
+    status: 200
+    note: >-
+      Archived 2026-05-08 copy of the home page, read because the live host refuses our TLS. Its
+      full internal link set is 17 marketing pages — /sterile-fill-finish, /rapid-fill-finish,
+      /fill-finish-services, /analytical-testing, /finished-product-inspection, /regulatory,
+      /supply-chain-support, /facility-equipment, /how-a-cmo-can-help, /how-we-work-together,
+      /why-selkirk, /leadership, /news-and-events, /careers, /contact — with no developer,
+      API, documentation, integration, portal or login destination anywhere in the navigation.
